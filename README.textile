@@ -1,4 +1,4 @@
-h1. RospoSignals
+h1. DART-Signals
 
 h3. Event/Messaging system for DART (http://www.dartlang.org/) inspired by AS3-Signals.
 

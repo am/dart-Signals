@@ -5,7 +5,7 @@ h3. Event/Messaging system for DART (http://www.dartlang.org/) inspired by AS3-S
 h2. Syntax
 
 <pre><code>Signal s = new Signal();
-s.add(onDispatchSignal);
+s.add(onDispatch);
 s.dispatch(['one', 1]);
 
 void onDispatch(List arguments){

@@ -1,13 +1,13 @@
-h1. RospoSignals: Event/Messaging system for DART (http://www.dartlang.org/) inspired by AS3-Signals.
+h1. RospoSignals
+
+h3. Event/Messaging system for DART (http://www.dartlang.org/) inspired by AS3-Signals.
 
 h2. Syntax
 
-<pre><code>
-Signal s = new Signal();
+<pre><code>Signal s = new Signal();
 s.add(onDispatchSignal);
 s.dispatch(['one', 1]);
 
 void onDispatch(List arguments){
 	print('onDispatch ${arguments[0]} ${arguments[1]}'); //onDispatch one 1
-}
-</code></pre>
+}</code></pre>

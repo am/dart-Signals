@@ -1,15 +1,13 @@
-#library('signals');
-
 class Signal {
 
 	List<SignalHelper> _helpers;
 	
 	Signal(){
-		_helpers = new List<SignalHelper>();
+		_helpers = List<SignalHelper>.empty(growable: true);
 	}
 	
-	List<SignalHelper> get helpers() => _helpers;
-        int get numListeners() => _helpers.length;
+	List<SignalHelper> get helpers => _helpers;
+	int get numListeners => _helpers.length;
 	
 	void add(Function fnc){
 		_add(fnc, false);
@@ -29,16 +27,21 @@ class Signal {
 		_helpers.forEach((SignalHelper e){
 			if(e.fnc==fnc){
 				int index = _helpers.indexOf(e, 0);
-			  	_helpers.removeRange(index, 1);
+				_helpers.removeRange(index, 1);
 			}
 		});
 	}
 
-	void dispatch(arguments){
-
+	void dispatch([arguments]){
 		_helpers.forEach((SignalHelper e){
 			Function f = e.fnc;
-			f(arguments);
+			if (arguments != null) {
+				f(arguments);
+			}
+			else{
+				f();
+			}
+
 			if(e.once) {
 				remove(e.fnc);
 			}

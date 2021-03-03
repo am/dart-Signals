@@ -1,9 +1,8 @@
 class Signal {
 
-	List<SignalHelper> _helpers;
+	List<SignalHelper> _helpers = [];
 	
 	Signal(){
-		_helpers = List<SignalHelper>.empty(growable: true);
 	}
 	
 	List<SignalHelper> get helpers => _helpers;

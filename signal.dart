@@ -24,12 +24,11 @@ class Signal {
 	}
 	      
 	void remove(Function fnc){
-		_helpers.forEach((SignalHelper e){
-			if(e.fnc==fnc){
-				int index = _helpers.indexOf(e, 0);
-				_helpers.removeRange(index, 1);
-			}
-		});
+		_helpers.removeWhere((element) => element.fnc == fnc);
+	}
+
+	void removeAll(){
+		_helpers.clear();
 	}
 
 	void dispatch([arguments]){
